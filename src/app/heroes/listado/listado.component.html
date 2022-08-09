@@ -1,0 +1,35 @@
+<p>listado heroes</p>
+
+<!-- <div *ngIf=" heroeBorrado !== ''"> validacion normal-->
+    <div *ngIf="heroeBorrado ; else noBorrado"> 
+  <!-- este es el if -->
+  <!-- *ngIf="heroeBorrado" lo toma como true si es que tiene un valor-->
+  <!-- el else noBorrado es una referencia local-->
+  <h3>Heroe Borrado: <small>{{heroeBorrado}}</small></h3>
+  
+</div>
+<!-- <div *ngIf="!heroeBorrado ">  -->
+  <!-- este es el if al anteponer el ! niega lo que se pone en la validacion-->
+  <!-- <h3>Heroe Borrado: <small>{{heroeBorrado}}</small></h3> -->
+  
+<!-- </div> -->
+ <ng-template #noBorrado>
+  <h3>No ha borrado nada..</h3>
+ </ng-template>
+ 
+
+
+<button (click)="borrar_heroe()">
+Borrar
+</button> 
+
+<ul>
+    <li *ngFor="let heroe of heroes ; let i = index">     
+      <!-- es lo mas parecido a un ciclo for -->
+      <!-- i = index para sacar el index de cada palabra -->
+       {{i}} - {{heroe}}
+    </li>
+</ul>
+
+
+ 
